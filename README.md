@@ -94,8 +94,19 @@ Simple Test:
     awareness, developing combat readiness, and building trust between the two military alliances involved in the exercises. Taiwan participates in this exercise as part of the PLA's strategy for 
     ensuring the country's defense against any potential threats from China.
 
-   Ollama (tinyllama:latest + RAG):
+   Ollama: (tinyllama:latest + RAG)
 
+   request:
+
+    curl --location --request GET 'http://localhost:8080/rag-from-pdf' \
+    --header 'Content-Type: application/json' \
+    --data 'when is Taiwan Han Kuang 41 Exercise for year 2025 ?'
+
+   response: (It is found in the pdf file, classpath:/docs/han-kuang-41-part2.pdf)
+
+    When is Taiwan's largest military exercise, Han Kuang 41, scheduled to take place for year 2025?
+
+    Answer: The annual Taiwanese-American-led military exercise called Han Kuang 41 is scheduled to begin on July 9 and last for 10 days of live-fire drills with some 22,000 reservists participating. The 2027 scenario involves a gray zone activity that could escalate into a military conflict as suggested by Riley Walterson, a senior fellow at the Hudson Institute, during a panel discussion hosted by the Hudson Institute on July 11. However, part of its success may also depend on U.S. Participation, which is missing. The United States' absence from Han Kuang not only limits its efficacy but also incur heavy costs in case of an actual invasion scenario.
    
 ------------------------------------------------------------------------------------------ 
 
