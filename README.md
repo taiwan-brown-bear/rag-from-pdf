@@ -17,6 +17,8 @@ Simple Test:
    2025 Taiwan Han Kuang Exercise is happening right now. (From July 9th to July 18th).
    Below are the responses from OpenAI, Anthropic, Ollama.
 
-   OpenAI: "As of my last update in October 2023, specific dates for the Taiwan Han Kuang 41 Exercise in 2025 had not been publicly announced. The Han Kuang exercises are typically held annually, usually in July, but the specific schedule for 2025 may not yet be available. For the most accurate and updated information, you may want to check official announcements from Taiwan's Ministry of National Defense closer to the date.".
+   OpenAI: "As of my last update in October 2023, specific dates for the Taiwan Han Kuang 41 Exercise in 2025 had not been publicly announced. The Han Kuang exercises are typically
+            held annually, usually in July, but the specific schedule for 2025 may not yet be available. For the most accurate and updated information, you may want to check official
+            announcements from Taiwan's Ministry of National Defense closer to the date.".
 
 Troubleshootings:
