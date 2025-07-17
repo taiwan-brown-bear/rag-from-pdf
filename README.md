@@ -15,7 +15,8 @@ The advantages of RAG:
 Simple Test:
 
    2025 Taiwan Han Kuang Exercise is happening right now. (From July 9th to July 18th).
-   Below are the responses from OpenAI, Anthropic, Ollama on 2025/07/17.
+   By asking "when is Taiwan Han Kuang 41 Exercise for year 2025 ?", 
+   below are the responses from OpenAI, Anthropic, Ollama on 2025/07/17.
 
    OpenAI:
    
@@ -87,4 +88,8 @@ Simple Test:
     awareness, developing combat readiness, and building trust between the two military alliances involved in the exercises. Taiwan participates in this exercise as part of the PLA's strategy for 
     ensuring the country's defense against any potential threats from China.
 
+   Ollama (tinyllama:latest + RAG):
+
+   
+   
 Troubleshootings:
