@@ -106,14 +106,16 @@ The advantages of RAG:
     awareness, developing combat readiness, and building trust between the two military alliances involved in the exercises. Taiwan participates in this exercise as part of the PLA's strategy for 
     ensuring the country's defense against any potential threats from China.
    
------------------------------------------------------------------------------------------- 
+# Troubleshootings:
 
-Troubleshootings:
+-----
 
 Question #1: When starting the spring boot app, PGVector is not up.
 Answer #1: You could manually run the following.
 
     %  docker compose --file /Users/charles/IdeaProjects/rag-from-pdf/compose.yaml --ansi never up --no-color --detach --wait
+
+-----
 
 
 
