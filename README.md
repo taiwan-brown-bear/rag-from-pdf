@@ -15,7 +15,11 @@ The advantages of RAG:
 Simple Test:
 
    2025 Taiwan Han Kuang Exercise is happening right now. (From July 9th to July 18th).
-   Below are the responses from OpenAI, Anthropic, Ollama on 2025/07/17 when asking "when is Taiwan Han Kuang 41 Exercise for year 2025 ?", 
+   Below are the responses from 
+   1. OpenAI,
+   2. Anthropic,
+   3. Ollama
+   on 2025/07/17 when asking "when is Taiwan Han Kuang 41 Exercise for year 2025 ?", 
 
    OpenAI:
    
