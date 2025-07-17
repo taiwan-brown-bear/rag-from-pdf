@@ -1,1 +1,6 @@
 # rag-from-pdf
+
+
+
+
+Troubleshootings:
