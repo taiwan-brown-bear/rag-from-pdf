@@ -1,0 +1,33 @@
+TTB: sprint boot ai needs this table in postgre vector db, pgVector.
+
+charles@MacBookPro rag-from-pdf % docker exec -it rag-from-pdf-container psql -U myuser -d mydb
+
+psql (16.9 (Debian 16.9-1.pgdg120+1))
+Type "help" for help.
+
+mydb=#
+mydb=#
+mydb=#
+mydb=#
+mydb=#
+mydb=# CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION
+mydb=# CREATE EXTENSION IF NOT EXISTS hstore;
+CREATE EXTENSION
+mydb=# CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION
+mydb=# CREATE TABLE IF NOT EXISTS vector_store (
+    id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+    content text,
+    metadata json,
+    embedding vector(1024)
+);
+CREATE TABLE
+mydb=# CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
+CREATE INDEX
+mydb=# SELECT * FROM vector_store;
+ id | content | metadata | embedding
+----+---------+----------+-----------
+(0 rows)
+
+mydb=#
