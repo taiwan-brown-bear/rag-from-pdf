@@ -41,9 +41,9 @@ public class PdfReferenceDocsLoader {
                 .query(Integer.class)
                 .single();
 
-        log.info("# of rows in vector_store table: {}", count);// TODO: table not exists yet ...
+        log.info("# of rows in vector_store table: {}", count);
 
-        if(count == 1272){//1135){//0) {
+        if(count == 1512){//1508){//1272){//1135){//0) {
             log.info("since no rows in the vector store table, going to populate the table " +
                     "with the pdf doc under resources/docs/ folder");
 
