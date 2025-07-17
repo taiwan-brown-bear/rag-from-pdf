@@ -17,8 +17,45 @@ Simple Test:
    2025 Taiwan Han Kuang Exercise is happening right now. (From July 9th to July 18th).
    Below are the responses from OpenAI, Anthropic, Ollama.
 
-   OpenAI: "As of my last update in October 2023, specific dates for the Taiwan Han Kuang 41 Exercise in 2025 had not been publicly announced. The Han Kuang exercises are typically
-            held annually, usually in July, but the specific schedule for 2025 may not yet be available. For the most accurate and updated information, you may want to check official
-            announcements from Taiwan's Ministry of National Defense closer to the date.".
+   OpenAI: 
+   
+    {
+    "id": "chatcmpl-BuP7zxXBDiGwNJFeh2d58RCJFj2Xf",
+    "object": "chat.completion",
+    "created": 1752782659,
+    "model": "gpt-4o-mini-2024-07-18",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "As of my last update in October 2023, specific dates for the Taiwan Han Kuang 41 Exercise in 2025 had not been publicly announced. The Han Kuang exercises are typically held annually, usually in July, but the specific schedule for 2025 may not yet be available. For the most accurate and updated information, you may want to check official announcements from Taiwan's Ministry of National Defense closer to the date.",
+                "refusal": null,
+                "annotations": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 22,
+        "completion_tokens": 87,
+        "total_tokens": 109,
+        "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+        }
+    },
+    "service_tier": "default",
+    "system_fingerprint": null
+    }
+
+   Anthropic: 
 
 Troubleshootings:
