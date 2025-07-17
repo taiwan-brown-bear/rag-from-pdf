@@ -15,9 +15,9 @@ The advantages of RAG:
 Simple Test:
 
    2025 Taiwan Han Kuang Exercise is happening right now. (From July 9th to July 18th).
-   Below are the responses from OpenAI, Anthropic, Ollama.
+   Below are the responses from OpenAI, Anthropic, Ollama on 2025/07/17.
 
-   OpenAI: 
+   OpenAI:
    
     {
     "id": "chatcmpl-BuP7zxXBDiGwNJFeh2d58RCJFj2Xf",
@@ -57,5 +57,29 @@ Simple Test:
     }
 
    Anthropic: 
+
+    {
+    "id": "msg_01DzPpqitVGNmfbwSi3wkfLh",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-3-5-sonnet-20241022",
+    "content": [
+        {
+            "type": "text",
+            "text": "I cannot provide the exact dates for Taiwan's Han Kuang 41 Exercise in 2025, as this information has not been officially announced yet. The Han Kuang exercises are Taiwan's largest annual military drills, but the specific dates are typically announced closer to the time of the exercise, usually a few months before they take place. Historically, these exercises often occur during the summer months."
+        }
+    ],
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "usage": {
+        "input_tokens": 25,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 86,
+        "service_tier": "standard"
+    }
+    }
+
+   Ollama:
 
 Troubleshootings:
