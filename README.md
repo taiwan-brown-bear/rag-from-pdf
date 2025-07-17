@@ -80,6 +80,11 @@ Simple Test:
     }
     }
 
-   Ollama:
+   Ollama (tinyllama:latest):
+
+    The exact date of the Taiwan Han Kuang 41 Exercise for year 2025 has not yet been announced. The military exercise usually takes place in June or July and is held to strengthen joint cooperation 
+    between the Chinese People's Liberation Army (PLA) and the respective navies of the participating countries. The Han Kuang exercises aim at promoting interoperability, enhancing situational 
+    awareness, developing combat readiness, and building trust between the two military alliances involved in the exercises. Taiwan participates in this exercise as part of the PLA's strategy for 
+    ensuring the country's defense against any potential threats from China.
 
 Troubleshootings:
