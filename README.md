@@ -111,3 +111,12 @@ Simple Test:
 ------------------------------------------------------------------------------------------ 
 
 Troubleshootings:
+
+Question #1: When starting the spring boot app, PGVector is not up.
+Answer #1: You could manually run the following.
+
+    %  docker compose --file /Users/charles/IdeaProjects/rag-from-pdf/compose.yaml --ansi never up --no-color --detach --wait
+
+
+
+
