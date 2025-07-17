@@ -19,6 +19,7 @@ Simple Test:
    1. OpenAI,
    2. Anthropic,
    3. Ollama
+
    on 2025/07/17 when asking "when is Taiwan Han Kuang 41 Exercise for year 2025 ?", 
 
    OpenAI:
