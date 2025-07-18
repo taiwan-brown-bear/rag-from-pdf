@@ -40,7 +40,7 @@ The advantages of RAG:
 
    3. put the pdf to resources folder and, then, add it to application.properties file.
 
-    pdf.file.path=classpath:/docs/spring-boot-reference.pdf
+    pdf.file.path=classpath:/docs/han-kuang-41-part2.pdf
 
 # Usage / Test with RAG:
 
