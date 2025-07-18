@@ -40,6 +40,8 @@ The advantages of RAG:
 
     CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
 
+   Note: OpenAI embedding uses dimension 1536. Ollama uses 1024.
+
    3. put the pdf to resources folder and, then, add it to application.properties file.
 
     pdf.file.path=classpath:/docs/spring-boot-reference.pdf
