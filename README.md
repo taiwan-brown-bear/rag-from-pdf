@@ -23,7 +23,7 @@ The advantages of RAG:
     ollama run tinyllama:latest
     ollama pull mxbai-embed-large:latest
       
-   2. run docker command and, then, SQL commands listed in schema.sql:
+   2. run docker command and, then, SQL commands listed in schema.sql (spring boot needs them):
 
     docker exec -it rag-from-pdf-container psql -U myuser -d mydb
 
