@@ -150,7 +150,7 @@ Answer #1: You could manually run the following.
 
 Question #2: Can I use OpenAI Free Account ?
 
-Answer #2: You might get the following response if you are using the Free Version.
+Answer #2: You might get the following error if you are using OpenAI Free Account (even when performing the word2vec process to populate the db table)
 
     Caused by: org.springframework.ai.retry.NonTransientAiException: HTTP 429 - {
     "error": {
