@@ -16,8 +16,14 @@ The advantages of RAG:
 
    prerequisite: 
 
-   1. ollama serve, ollama list, ollama run tinyllama:latest, ollama pull mxbai-embed-large:latest
-   2. docker exec -it rag-from-pdf-container psql -U myuser -d mydb and, then, run each SQL in the file, schema.sql.
+   1. run ollama commands:
+
+    ollama serve
+    ollama list
+    ollama run tinyllama:latest
+    ollama pull mxbai-embed-large:latest
+      
+   4. run docker/SQL commands: docker exec -it rag-from-pdf-container psql -U myuser -d mydb and, then, run each SQL in the file, schema.sql.
 
    request:
 
