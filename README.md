@@ -38,7 +38,11 @@ The advantages of RAG:
         embedding vector(1024)
     );
 
-CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
+    CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
+
+   3. put the pdf to resources folder and, then, add it to application.properties file.
+
+    pdf.file.path=classpath:/docs/spring-boot-reference.pdf
 
    request:
 
