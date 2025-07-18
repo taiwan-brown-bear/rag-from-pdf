@@ -163,8 +163,17 @@ Answer #2: You might get the following error if you are using OpenAI Free Accoun
 
 ----- 
 
+Question #3: How to verify if the vector_store table is populated.
 
+Answer #3: One can try to read the contents and delete the table if no longer needing it.
 
+    mydb=# select * from vector_store;
+    id | context | metadata | embedding 
+    ----+---------+----------+-----------
+    (0 rows)
+    mydb=# drop table vector_store;
+
+-----
 
 
 
