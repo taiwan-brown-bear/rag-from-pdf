@@ -25,9 +25,11 @@ public class PdfReferenceDocsLoader {
     //@Value("classpath:/docs/spring-boot-reference.pdf")
     @Value("${pdf.file.path}")// read from application.properties instead ...
     private Resource pdfDoc;
+    @Value("${vector.store.count}")
+    private int vectorStoreCount;
 
     public PdfReferenceDocsLoader(EmbeddingModel embeddingModel, JdbcClient jdbcClient, VectorStore vectorStore){
-        this.embeddingModel = embeddingModel;// Note: local llm, tinyllama:latest, is used here since the free version of OpenAI LLM complains about the quota & billing issues. It looks like the word2vec process is done by the LLM here.
+        this.embeddingModel = embeddingModel;// Note: local llm, tinyllama:latest, is used here since the free version of OpenAI LLM complains about the quota & billing issues. It looks like the embedding process is done by the LLM here as well.
         this.jdbcClient = jdbcClient;
         this.vectorStore = vectorStore;
     }
@@ -37,15 +39,20 @@ public class PdfReferenceDocsLoader {
 
         log.info("the pdf doc under resources/docs/ folder is \"{}\"", pdfDoc.getFilename());
 
-        Integer count = jdbcClient.sql("select count(*) from vector_store")
+        int count = jdbcClient.sql("select count(*) from vector_store")
                 .query(Integer.class)
                 .single();
 
-        log.info("# of rows in vector_store table: {}", count);
+        log.info("\n\n\nif wanna insert the pdf file, {}, to vector_store,\nset vector.store.count to {}.\nCurrently, in application.properties\n,   vector.store.count is {}.\n\n", pdfDoc.getFilename(), count, vectorStoreCount);
 
-        if(count == 1512){//1508){//1272){//1135){//0) {
-            log.info("since no rows in the vector store table, going to populate the table " +
-                    "with the pdf doc under resources/docs/ folder");
+        // TODO: Note: If you are going to push more PDF files to the vector store,
+        //             manually update both
+        //               1. vector.store.count
+        //               2. pdf.file.path
+        //             in application.properties file.
+        //             The same PDF file can be inserted repeatedly if you only update vector.store.count !!!
+        if(count == vectorStoreCount){//1512){//1508){//1272){//1135){//0) {// Note: when starting up the server, it can only process one PDF file here. One needs to specify the pdf file in application.properties file.
+            log.info(" *** inserting {} to vector_store *** ", pdfDoc.getFilename());
 
             var readerConfig = PdfDocumentReaderConfig.builder()
                     .withPageExtractedTextFormatter(
@@ -53,7 +60,7 @@ public class PdfReferenceDocsLoader {
                                     .withNumberOfBottomTextLinesToDelete(0)
                                     .withNumberOfTopPagesToSkipBeforeDelete(0)
                                     .build())
-                    .withPagesPerDocument(1)// TODO: check the count later when changing this number ...
+                    .withPagesPerDocument(1)
                     .build();
 
             var pdfReader = new PagePdfDocumentReader(pdfDoc, readerConfig);

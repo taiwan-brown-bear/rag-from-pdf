@@ -1,4 +1,4 @@
-package com.taiwan_brown_bear.rag_from_pdf.commands;
+package com.taiwan_brown_bear.rag_from_pdf.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -10,22 +10,15 @@ import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.core.io.Resource;
-import org.springframework.http.ResponseEntity;
-import org.springframework.shell.command.annotation.Command;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//@Command
 @Slf4j
-@RestController
-@RequestMapping("/rag-from-pdf")
-public class QuestionAssistantCommand {
+@Service
+public class RagFromPdfService {
 
     private final ChatClient  chatClient;
     private final VectorStore vectorStore;
@@ -33,15 +26,9 @@ public class QuestionAssistantCommand {
     @Value("${llm.prompt.template}")
     private Resource template;
 
-    public QuestionAssistantCommand(ChatModel chatModel, VectorStore vectorStore){
+    public RagFromPdfService(ChatModel chatModel, VectorStore vectorStore){
         this.chatClient = ChatClient.create(chatModel);
         this.vectorStore = vectorStore;
-    }
-
-    @GetMapping
-    public ResponseEntity<String> evaluate(@RequestBody String question)
-    {
-        return ResponseEntity.ok(askQuestion(question));
     }
 
     //@Command(command = "q")
