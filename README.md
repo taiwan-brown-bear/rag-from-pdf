@@ -16,14 +16,29 @@ The advantages of RAG:
 
    prerequisite: 
 
-   1. run ollama commands:
+   1. run ollama commands to start LLM and download the embeeding:
 
     ollama serve
     ollama list
     ollama run tinyllama:latest
     ollama pull mxbai-embed-large:latest
       
-   4. run docker/SQL commands: docker exec -it rag-from-pdf-container psql -U myuser -d mydb and, then, run each SQL in the file, schema.sql.
+   2. run docker command and, then, SQL commands listed in schema.sql:
+
+    docker exec -it rag-from-pdf-container psql -U myuser -d mydb
+
+    CREATE EXTENSION IF NOT EXISTS vector;
+    CREATE EXTENSION IF NOT EXISTS hstore;
+    CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+    CREATE TABLE IF NOT EXISTS vector_store (
+        id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+        content text,
+        metadata json,
+        embedding vector(1024)
+    );
+
+CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
 
    request:
 
