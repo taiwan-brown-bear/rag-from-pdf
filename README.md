@@ -18,29 +18,27 @@ The advantages of RAG:
 
    1. run ollama commands to start LLM and download the embeeding:
 
-    ollama serve
-    ollama list
-    ollama run tinyllama:latest
-    ollama pull mxbai-embed-large:latest
+    % ollama serve
+    % ollama list
+    % ollama run tinyllama:latest
+    % ollama pull mxbai-embed-large:latest
       
-   2. run docker command and, then, SQL commands listed in schema.sql (spring boot needs them):
+   2. run docker command and, then, SQL commands listed in schema.sql (Note: OpenAI embedding uses dimension 1536. Ollama uses 1024. Spring Boot needs this DDL): 
 
-    docker exec -it rag-from-pdf-container psql -U myuser -d mydb
+    % docker exec -it rag-from-pdf-container psql -U myuser -d mydb
 
-    CREATE EXTENSION IF NOT EXISTS vector;
-    CREATE EXTENSION IF NOT EXISTS hstore;
-    CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+    mydb=# CREATE EXTENSION IF NOT EXISTS vector;
+    mydb=# CREATE EXTENSION IF NOT EXISTS hstore;
+    mydb=# CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
-    CREATE TABLE IF NOT EXISTS vector_store (
+    mydb=# CREATE TABLE IF NOT EXISTS vector_store (
         id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
         content text,
         metadata json,
         embedding vector(1024)
     );
 
-    CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
-
-   Note: OpenAI embedding uses dimension 1536. Ollama uses 1024.
+    mydb=# CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
 
    3. put the pdf to resources folder and, then, add it to application.properties file.
 
